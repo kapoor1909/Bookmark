@@ -1,0 +1,26 @@
+h4{
+    padding-left: 14rem;
+}
+a{
+    text-decoration: none;
+
+}
+.column{
+    padding-left: 10rem;
+    padding-right: 8rem;
+}
+.conatiner{
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+.form-row{
+    margin: auto 10rem;
+}
+p{
+    margin: 10px 0 !important;
+}
+.login-container{
+    width: 600px;
+    margin-top: 50px;
+    text-align: center;
+}

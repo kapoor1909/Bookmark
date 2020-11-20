@@ -1,0 +1,31 @@
+<%- include('../layouts/main.ejs') %>
+<form action="/bookmarks" method="POST">
+    <div class="form-row">
+        <div class="col-3" id="title">
+            <input type="text" class="form-control mt-2 mb-2" placeholder="TITLE" name="title">
+          </div>
+      <div class="col-3" id="url">
+        <input type="text" class="form-control mt-2 mb-2" placeholder="URL" name="url">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col" id="hour">
+        <label for="hours">Hours</label>
+        <input type="number" class="form-control  " placeholder="Hours" name="hour" value="0">
+      </div>
+      <div class="col" id="minute">
+        <label for="minute">Minutes</label>
+        <input type="number" class="form-control  " placeholder="Minutes" name="minute" value="0">
+      </div>
+      <div class="col" id="seconds">
+        <label for="seconds">Seconds</label>
+        <input type="number" class="form-control" placeholder="Seconds" name="seconds" value="0">
+      </div>
+      <div class="col">
+        <input type="submit" value="Save" class="btn">
+        <a href="/dashboard" class="btn orange">Cancel</a>
+      </div>
+    </div>
+</form>
+
+

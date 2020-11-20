@@ -1,0 +1,78 @@
+<head>
+  <style>
+      body{
+          background-image: url("../public/images/Youtube\ Bookmark.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          height: 100%;
+      }
+      h1,h4{
+          padding-top: 2rem;
+      }
+      table{
+          font-size: 20px;
+      }
+    a{
+      text-decoration: none;
+    }
+      
+  </style>
+</head>
+<%- include('layouts/main.ejs'); %>
+
+    
+
+<%  if(length>0){%>
+    <h1 class="center-align">Saved bookmarks</h1>
+<%  for( x in bookmarks){%>
+    <%  if(x==0){%>
+    <table class="highlight responsive-table centered">
+            <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Time</th>
+                  <th>Link</th>
+                  <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><%= bookmarks[x].title %> </td>
+                <td><%= bookmarks[x].hour %>:<%= bookmarks[x].minute %>:<%= bookmarks[x].seconds %> </td>
+                <td><a href=" <%= bookmarks[x].url %>" target="_blank">Click to redirect</a> </td>
+                <td>
+                    <form action="/bookmarks/<%= bookmarks[x]._id %>" method="POST" id="delete-form" class="center-align">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn blue">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                    </form> 
+                </td>
+              </tr>
+            </tbody>
+    </table>
+  <% } else{%>
+    <table class="highlight responsive-table centered">
+        <tbody>
+          <tr>
+            <td><%= bookmarks[x].title %> </td>
+            <td><%= bookmarks[x].hour %>:<%= bookmarks[x].minute %>:<%= bookmarks[x].seconds %> </td>
+            <td><a href=" <%= bookmarks[x].url %>" target="_blank">Click to redirect</a> </td>
+            <td>
+                <form action="/bookmarks/<%= bookmarks[x]._id %>" method="POST" id="delete-form" class="center-align">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn blue">
+                    <i class="fas fa-trash"></i>
+                </button>
+                </form> 
+            </td>
+          </tr>
+        </tbody>
+</table>
+<% }%>
+<%}%>
+<% } else{%>
+    <h4 class="left-align">No bookmarks</h4>
+<% } %>
+
